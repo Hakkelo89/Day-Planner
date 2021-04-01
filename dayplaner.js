@@ -19,7 +19,7 @@ $(document).ready(function () {
     const newSpan = $("<span>");
     const newTextInput = $("<input>");
     const newBtn = $("<button>");
-    
+
     //appends new elements to container, parent or sibling respectively. Adds B/S classes to new elements
     $(".container").append(newDiv);
     $(".container").addClass("mb-5");
@@ -38,4 +38,23 @@ $(document).ready(function () {
     newBtn.addClass("btn btn-outline-secondary");
 
     /* END OF FOREACH()*/
+  });
+
+  //coloring text box
+  $.each($(".time-block input[type='text']"), function (i, v) {
+    let input = $(v);
+    var hour = moment().hour;
+    var inputHour = parseInt(input.attr("data").split("-")[1]);
+    if (9 <= hour && 17 >= hour) {
+      if (hour > inputHour) {
+        input.css("background-color", "red");
+      } else if (hour == inputHour) {
+        input.css("background-color", "white");
+        input.focus();
+      } else {
+        input.css("background-color", "green");
+      }
+    } else {
+      input.css("background-color", "red");
+    }
   });
