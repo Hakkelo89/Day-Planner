@@ -19,3 +19,23 @@ $(document).ready(function () {
     const newSpan = $("<span>");
     const newTextInput = $("<input>");
     const newBtn = $("<button>");
+    
+    //appends new elements to container, parent or sibling respectively. Adds B/S classes to new elements
+    $(".container").append(newDiv);
+    $(".container").addClass("mb-5");
+
+    newDiv.addClass("time-block input-group input-group-prepend");
+    newDiv.attr("data-val", index);
+    newDiv.append(newSpan);
+    newSpan.addClass("input-group-text");
+    newSpan.addClass("start-time");
+    newSpan.text(startTime);
+    newDiv.append(newTextInput);
+    newTextInput.attr("type", "text");
+    newTextInput.attr("data", "hour-" + moment().hour(time).format("H"));
+    newTextInput.addClass("form-control");
+    newDiv.append(newBtn);
+    newBtn.addClass("btn btn-outline-secondary");
+
+    /* END OF FOREACH()*/
+  });
