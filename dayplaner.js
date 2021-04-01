@@ -70,3 +70,14 @@ $(document).ready(function () {
     debugger;
     input.val(localStorageData);
   });
+
+  //click event
+  $("button").on("click", function (event) {
+    event.preventDefault();
+    debugger;
+    const textInput = $(this).siblings("input").attr("data");
+    const textVal = $(this).siblings("input").val();
+    localStorage.setItem(textInput, textVal);
+    const lsVal = localStorage.getItem(textInput);
+    $(this).siblings("input").text(lsVal);
+  });
