@@ -81,3 +81,24 @@ $(document).ready(function () {
     const lsVal = localStorage.getItem(textInput);
     $(this).siblings("input").text(lsVal);
   });
+
+  /*const onClick = function (event) {
+    const plannerEvents = JSON.parse(localStorage.getItem("plannerEvents"));
+    const target = $(event.target);
+    if (target.is("button")) {
+      const key = target.attr("id");
+      const value = target.parent().find("text").val();
+
+      const newObject = {
+        ...plannerEvents,
+        [key]: value,
+      };
+      localStorage.setItem("plannerEvents", JSON.stringify(newObject));
+    }
+  };*/
+
+  //updated width of time block span and changed btn text to "SAVE"
+  // Consider using font awesome icon for save feature
+  $(".input-group-text").css("width", "100px");
+  $("button").text("SAVE"); // update with icon from font-awesome
+});
