@@ -58,3 +58,15 @@ $(document).ready(function () {
       input.css("background-color", "red");
     }
   });
+
+  //local storage set data to text box
+  x.forEach(function (time, index) {
+    const txt = `hour-${time}`;
+
+    const localStorageData = localStorage.getItem(txt);
+    const inputText = `input[data='hour-${time}']`;
+    debugger;
+    let input = $(inputText);
+    debugger;
+    input.val(localStorageData);
+  });
