@@ -6,7 +6,7 @@ $(document).ready(function () {
   $("#currentDay").text(currentDate);
   const currentTime = moment().format("H");
 
-  //forEach loops through x[], pushes "time" elements to new startTime[] in the " AM/PM" format
+  //forEach loops through x[], pushes "time" elements to new startTime[] in the "00 AM/PM" format
   x.forEach(function (time, index) {
     const startTime = [];
     startTime.push(moment().hour(time).format("h A"));
