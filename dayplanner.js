@@ -55,7 +55,7 @@ $(document).ready(function () {
         input.css("background-color", "green");
       }
     } else {
-      input.css("background-color", "red");
+      input.css("background-color", "grey");
     }
   });
 
